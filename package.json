@@ -1,0 +1,49 @@
+{
+   "name": "validator",
+   "version": "0.1",
+   "description": "Object validation and sanitization.",
+   "keywords": [
+      "validator", "validation", "validate", "sanitization", "sanitize"
+   ],
+   "author": {
+         "name":  "Philipp Naderer",
+         "web":   "http://github.com/botic",
+         "email": "philipp.naderer@gmail.com"
+   },
+   "maintainers": [
+      {
+         "name":  "Philipp Naderer",
+         "web":   "http://github.com/botic",
+         "email": "philipp.naderer@gmail.com"
+      }
+   ],
+   "contributors": [
+      {
+         "name":  "Philipp Naderer",
+         "web":   "http://github.com/botic",
+         "email": "philipp.naderer@gmail.com"
+      },
+      {
+         "name": "Robert Gaggl",
+         "web": "http://nomatic.org/",
+         "email": "robert@nomatic.org"
+      }
+   ],
+   "dependencies": { },
+   "licenses": [
+      {
+         "type": "MIT",
+         "url": "https://github.com/botic/validator/raw/master/LICENSE"
+      }
+   ],
+   "repositories": [
+      {
+         "type": "git",
+         "url": "https://github.com/botic/validator.git"
+      }
+   ],
+   "engines": {
+      "ringojs": ">0.10"
+   },
+   "main": "./lib/validator.js"
+}
