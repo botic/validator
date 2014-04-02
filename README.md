@@ -1,7 +1,7 @@
 validator
 =========
 
-A validator for RingoJS
+Validator is a lightweight validation and sanitization library for RingoJS. It’s using the `ringo/utils/strings` module for string validation.
 
 ## Example
 
