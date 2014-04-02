@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>validator - Validator API</title>
+
+        <link rel="shortcut icon" href="http://ringojs.org/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="http://ringojs.org/favicon.ico" type="image/x-icon" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,600&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../static/jsdoc.css" />
+<link rel="stylesheet" href="../static/style.css" />
+<script type="text/javascript" src="../static/jquery.min.js"></script>
+<script type="text/javascript" src="../static/jsdoc.js"></script>
+
+
+  </head>
+
+  <body class="jsdoc standalone">
+    <div class="main">
+        <div class="content jsdoc">
+        
+    
+        <h1 class="modulename">Module validator</h1>
+        <div class="fileoverview">
+            
+
+
+        </div>
+
+        <div class="classoverview">
+
+            <div class="classes">
+                
+                <h2>Class <a href="#Validation" class="jsdoc-title">Validation</a></h2>
+                
+                <h3>Instance Methods</h3>
+                <ul class="propertyoverview">
+                    
+                    <li>
+                        <a href="#Validation.prototype.equal" class="jsdoc-title"> equal</a>(obj, message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.hasLength" class="jsdoc-title"> hasLength</a>(length, message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isAlpha" class="jsdoc-title"> isAlpha</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isAlphanumeric" class="jsdoc-title"> isAlphanumeric</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isDateFormat" class="jsdoc-title"> isDateFormat</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isDefined" class="jsdoc-title"> isDefined</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isEmail" class="jsdoc-title"> isEmail</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isFalse" class="jsdoc-title"> isFalse</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isFileName" class="jsdoc-title"> isFileName</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isFloat" class="jsdoc-title"> isFloat</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isHexColor" class="jsdoc-title"> isHexColor</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isInt" class="jsdoc-title"> isInt</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isNumber" class="jsdoc-title"> isNumber</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isNumeric" class="jsdoc-title"> isNumeric</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isTrue" class="jsdoc-title"> isTrue</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.isUrl" class="jsdoc-title"> isUrl</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.lengthBetween" class="jsdoc-title"> lengthBetween</a>(minLength, maxLength, message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.matches" class="jsdoc-title"> matches</a>(regex, message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.maxLength" class="jsdoc-title"> maxLength</a>(maxLength, message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.minLength" class="jsdoc-title"> minLength</a>(minLength, message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.notNull" class="jsdoc-title"> notNull</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.passes" class="jsdoc-title"> passes</a>(func, message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.strictEqual" class="jsdoc-title"> strictEqual</a>(obj, message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.strictNotNull" class="jsdoc-title"> strictNotNull</a>(message)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.toBoolean" class="jsdoc-title"> toBoolean</a>(strictTrue)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.toDate" class="jsdoc-title"> toDate</a>()
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.toFloat" class="jsdoc-title"> toFloat</a>()
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.toInt" class="jsdoc-title"> toInt</a>(radix)
+                    </li>
+                    </ul>
+                
+                <h3>Instance Properties</h3>
+                <ul class="propertyoverview">
+                    
+                    <li>
+                        <a href="#Validation.prototype.isValid" class="jsdoc-title"> isValid</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.stopOnFail" class="jsdoc-title"> stopOnFail</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.validation" class="jsdoc-title"> validation</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#Validation.prototype.value" class="jsdoc-title"> value</a>
+                    </li>
+                    </ul>
+                
+                <h2>Class <a href="#Validator" class="jsdoc-title">Validator</a></h2>
+                
+                <h3>Instance Methods</h3>
+                <ul class="propertyoverview">
+                    
+                    <li>
+                        <a href="#Validator.prototype.errorMessages" class="jsdoc-title"> errorMessages</a>(key)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validator.prototype.getTemplateContext" class="jsdoc-title"> getTemplateContext</a>()
+                    </li>
+                    
+                    <li>
+                        <a href="#Validator.prototype.hasErrors" class="jsdoc-title"> hasErrors</a>(name)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validator.prototype.validate" class="jsdoc-title"> validate</a>(name)
+                    </li>
+                    
+                    <li>
+                        <a href="#Validator.prototype.validateAll" class="jsdoc-title"> validateAll</a>(name, value)
+                    </li>
+                    </ul>
+                
+                <h3>Instance Properties</h3>
+                <ul class="propertyoverview">
+                    
+                    <li>
+                        <a href="#Validator.prototype.obj" class="jsdoc-title"> obj</a>
+                    </li>
+                    </ul>
+                </div>
+        </div>
+        <div class="details">
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation">
+                <h3 class="classtitle">
+                    <span class="itemtitle"><a id="Validation" href="#Validation" class="itemtitle itemname">Validation</a></span>
+                    <span class="itemtitle light">(validation, stopOnFail)</span></h3>
+                <div>
+                    
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>Object</td>
+                            <td class="paramname">validation</td>
+                            <td>An object containing the name of the property,       the value, a validity state and an array of messages.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Boolean</td>
+                            <td class="paramname">stopOnFail</td>
+                            <td>If false the all validationmethod calls in a chain will be executed (optional, defaults to true)</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> A newly created validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.equal">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.equal" href="#Validation.prototype.equal" class="itemtitle itemname">equal</a></span>
+                    <span class="itemtitle light">(obj, message)</span></h3>
+                <div>
+                    <p>Passes if the value is equal to the given object.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>Object</td>
+                            <td class="paramname">obj</td>
+                            <td>The object to compare</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.hasLength">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.hasLength" href="#Validation.prototype.hasLength" class="itemtitle itemname">hasLength</a></span>
+                    <span class="itemtitle light">(length, message)</span></h3>
+                <div>
+                    <p>Passes if the value has the given length.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>Number</td>
+                            <td class="paramname">length</td>
+                            <td>The required length of value</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isAlpha">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isAlpha" href="#Validation.prototype.isAlpha" class="itemtitle itemname">isAlpha</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value is alphabetic.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isAlphanumeric">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isAlphanumeric" href="#Validation.prototype.isAlphanumeric" class="itemtitle itemname">isAlphanumeric</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value contains only letters of the alphabet and numbers.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isDateFormat">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isDateFormat" href="#Validation.prototype.isDateFormat" class="itemtitle itemname">isDateFormat</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value is a valid date format pattern.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isDefined">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isDefined" href="#Validation.prototype.isDefined" class="itemtitle itemname">isDefined</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value is not undefined.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isEmail">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isEmail" href="#Validation.prototype.isEmail" class="itemtitle itemname">isEmail</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value is a valid email address.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isFalse">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isFalse" href="#Validation.prototype.isFalse" class="itemtitle itemname">isFalse</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value is false.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isFileName">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isFileName" href="#Validation.prototype.isFileName" class="itemtitle itemname">isFileName</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value contains no characters
+that are forbidden in file names.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isFloat">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isFloat" href="#Validation.prototype.isFloat" class="itemtitle itemname">isFloat</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value is a valid floating point literal.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isHexColor">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isHexColor" href="#Validation.prototype.isHexColor" class="itemtitle itemname">isHexColor</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value is a valid color value in hexadecimal format.
+It may also contain # as first character.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isInt">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isInt" href="#Validation.prototype.isInt" class="itemtitle itemname">isInt</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value is a valid integer literal.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isNumber">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isNumber" href="#Validation.prototype.isNumber" class="itemtitle itemname">isNumber</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value is a valid floating point or integer literal.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isNumeric">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isNumeric" href="#Validation.prototype.isNumeric" class="itemtitle itemname">isNumeric</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value contains only the characters [0-9].</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isTrue">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isTrue" href="#Validation.prototype.isTrue" class="itemtitle itemname">isTrue</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value is true.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isUrl">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isUrl" href="#Validation.prototype.isUrl" class="itemtitle itemname">isUrl</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value is a valid URL.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.isValid">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.isValid" href="#Validation.prototype.isValid" class="itemtitle itemname">isValid</a></span>
+                    </h3>
+                <div>
+                    
+
+
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.lengthBetween">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.lengthBetween" href="#Validation.prototype.lengthBetween" class="itemtitle itemname">lengthBetween</a></span>
+                    <span class="itemtitle light">(minLength, maxLength, message)</span></h3>
+                <div>
+                    <p>Passes if the value's length is between the minLength and maxLength.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>Number</td>
+                            <td class="paramname">minLength</td>
+                            <td>The minimal length of value</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Number</td>
+                            <td class="paramname">maxLength</td>
+                            <td>The maximum length of value</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.matches">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.matches" href="#Validation.prototype.matches" class="itemtitle itemname">matches</a></span>
+                    <span class="itemtitle light">(regex, message)</span></h3>
+                <div>
+                    <p>Passes if the value matched the given regular expression.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>RegExp</td>
+                            <td class="paramname">regex</td>
+                            <td>The regular expression to match</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.maxLength">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.maxLength" href="#Validation.prototype.maxLength" class="itemtitle itemname">maxLength</a></span>
+                    <span class="itemtitle light">(maxLength, message)</span></h3>
+                <div>
+                    <p>Passes if the value's length is not longer than maxLength.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>Number</td>
+                            <td class="paramname">maxLength</td>
+                            <td>The maximum length of value</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.minLength">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.minLength" href="#Validation.prototype.minLength" class="itemtitle itemname">minLength</a></span>
+                    <span class="itemtitle light">(minLength, message)</span></h3>
+                <div>
+                    <p>Passes if the value's length is not shorter than minLength.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>Number</td>
+                            <td class="paramname">minLength</td>
+                            <td>The minimal length of value</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.notNull">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.notNull" href="#Validation.prototype.notNull" class="itemtitle itemname">notNull</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value is not null.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.passes">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.passes" href="#Validation.prototype.passes" class="itemtitle itemname">passes</a></span>
+                    <span class="itemtitle light">(func, message)</span></h3>
+                <div>
+                    <p>Passes if the given function returns true.
+The function receives the value as first argument.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>Function</td>
+                            <td class="paramname">func</td>
+                            <td>The validation function</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.stopOnFail">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.stopOnFail" href="#Validation.prototype.stopOnFail" class="itemtitle itemname">stopOnFail</a></span>
+                    </h3>
+                <div>
+                    
+
+
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.strictEqual">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.strictEqual" href="#Validation.prototype.strictEqual" class="itemtitle itemname">strictEqual</a></span>
+                    <span class="itemtitle light">(obj, message)</span></h3>
+                <div>
+                    <p>Passes if the value is strict equal to the given object.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>Object</td>
+                            <td class="paramname">obj</td>
+                            <td>The object to compare</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.strictNotNull">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.strictNotNull" href="#Validation.prototype.strictNotNull" class="itemtitle itemname">strictNotNull</a></span>
+                    <span class="itemtitle light">(message)</span></h3>
+                <div>
+                    <p>Passes if the value is strict not null.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">message</td>
+                            <td>The failure message</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.toBoolean">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.toBoolean" href="#Validation.prototype.toBoolean" class="itemtitle itemname">toBoolean</a></span>
+                    <span class="itemtitle light">(strictTrue)</span></h3>
+                <div>
+                    <p>Converts the value to a boolean.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>Boolean</td>
+                            <td class="paramname">strictTrue</td>
+                            <td>only return true if value is strict "true" or "1"</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Boolean</td>
+                            <td> The value as boolean</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.toDate">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.toDate" href="#Validation.prototype.toDate" class="itemtitle itemname">toDate</a></span>
+                    <span class="itemtitle light">()</span></h3>
+                <div>
+                    <p>Converts the value to a Date object, if possible.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Date</td>
+                            <td> The value as Date, or null if parsing failed</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.toFloat">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.toFloat" href="#Validation.prototype.toFloat" class="itemtitle itemname">toFloat</a></span>
+                    <span class="itemtitle light">()</span></h3>
+                <div>
+                    <p>Converts the value to a floating point number.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Number</td>
+                            <td> The value as floating point number, or NaN if if parsing failed</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.toInt">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.toInt" href="#Validation.prototype.toInt" class="itemtitle itemname">toInt</a></span>
+                    <span class="itemtitle light">(radix)</span></h3>
+                <div>
+                    <p>Converts the value to an integer number.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td></td>
+                            <td class="paramname">radix</td>
+                            <td></td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Number</td>
+                            <td> The value as integer number, or NaN if if parsing failed</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.validation">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.validation" href="#Validation.prototype.validation" class="itemtitle itemname">validation</a></span>
+                    </h3>
+                <div>
+                    
+
+
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.value">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.value" href="#Validation.prototype.value" class="itemtitle itemname">value</a></span>
+                    </h3>
+                <div>
+                    
+
+
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validator">
+                <h3 class="classtitle">
+                    <span class="itemtitle"><a id="Validator" href="#Validator" class="itemtitle itemname">Validator</a></span>
+                    <span class="itemtitle light">(objectToValidate)</span></h3>
+                <div>
+                    <p>Creates a new Validator instance</p>
+
+
+                </div>
+                
+                <div>
+                    <h4> Example </h4>
+                    <pre class="sh_javascript sh_sourceCode">var validator = new Validator({  "email": "foo.bar@example.com"});// validate a valuevalidator.validate("email").         isDefined("Email address is missing!").         isEmail("Invalid email address provided");// returns true if a validation failedvalidator.hasErrors();// returns an array with all error messagesvalidator.errorMessages();// returns an object suitable for use as rendering contextvalidator.getTemplateContext();</pre>
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td></td>
+                            <td class="paramname">objectToValidate</td>
+                            <td></td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validator</td>
+                            <td> A newly created validator instance</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validator.prototype.errorMessages">
+                <h3 >
+                    <span class="itemtitle">Validator.prototype.<a id="Validator.prototype.errorMessages" href="#Validator.prototype.errorMessages" class="itemtitle itemname">errorMessages</a></span>
+                    <span class="itemtitle light">(key)</span></h3>
+                <div>
+                    <p>Returns the validation failure messages.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">key</td>
+                            <td>Optional key to limit the failure messages to a single validation</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Array</td>
+                            <td> An array containing all failure messages</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validator.prototype.getTemplateContext">
+                <h3 >
+                    <span class="itemtitle">Validator.prototype.<a id="Validator.prototype.getTemplateContext" href="#Validator.prototype.getTemplateContext" class="itemtitle itemname">getTemplateContext</a></span>
+                    <span class="itemtitle light">()</span></h3>
+                <div>
+                    <p>Returns an object suitable for use as template rendering context.
+This object contains all values stored by their name, an
+object named <code>errors</code> containing the validation failure messages
+by value name, and a boolean <code>hasErrors</code>.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Object</td>
+                            <td> The template context object</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validator.prototype.hasErrors">
+                <h3 >
+                    <span class="itemtitle">Validator.prototype.<a id="Validator.prototype.hasErrors" href="#Validator.prototype.hasErrors" class="itemtitle itemname">hasErrors</a></span>
+                    <span class="itemtitle light">(name)</span></h3>
+                <div>
+                    <p>Returns true if any of the validations of this validator failed</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">name</td>
+                            <td>Optional name of a single value to check</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Boolean</td>
+                            <td> True if any (or the specified value) validation failed</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validator.prototype.obj">
+                <h3 >
+                    <span class="itemtitle">Validator.prototype.<a id="Validator.prototype.obj" href="#Validator.prototype.obj" class="itemtitle itemname">obj</a></span>
+                    </h3>
+                <div>
+                    <p>The object to validate</p>
+
+
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validator.prototype.validate">
+                <h3 >
+                    <span class="itemtitle">Validator.prototype.<a id="Validator.prototype.validate" href="#Validator.prototype.validate" class="itemtitle itemname">validate</a></span>
+                    <span class="itemtitle light">(name)</span></h3>
+                <div>
+                    <p>Main validation entry point. The result of this method contains
+various validation methods that can be chained. Note that this
+validation object stops validating at the first fail.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">name</td>
+                            <td>The name of the value</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> A Validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div>
+                    <h4>See</h4>
+                    <div class="extrainfo">
+                        <a href="../Validator.prototype.validateAll/index.html">Validator.prototype.validateAll</a>
+                    </div>
+                </div>
+                </div>
+            
+            <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validator.prototype.validateAll">
+                <h3 >
+                    <span class="itemtitle">Validator.prototype.<a id="Validator.prototype.validateAll" href="#Validator.prototype.validateAll" class="itemtitle itemname">validateAll</a></span>
+                    <span class="itemtitle light">(name, value)</span></h3>
+                <div>
+                    <p>Main validation entry point. The result of this method contains
+various validation methods that can be chained. Note that this
+validation object does not stop at the first fail but continues
+to validate all validation methods.</p>
+
+
+                </div>
+                
+                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                        
+                        <tr>
+                            <td>String</td>
+                            <td class="paramname">name</td>
+                            <td>The name of the value</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Object</td>
+                            <td class="paramname">value</td>
+                            <td>The value to validate</td>
+                        </tr>
+                        </table>
+                </div>
+                
+                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td>Validation</td>
+                            <td> A Validation instance</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div>
+                    <h4>See</h4>
+                    <div class="extrainfo">
+                        <a href="../Validator.prototype.validate/index.html">Validator.prototype.validate</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+    
+        </div>
+
+        <nav class="jsdoc standalone">
+            <h1>Validator API</h1>
+            <div class="jsdocSidenav">
+   <div class="toggles">
+      <a href="../index.html">&bull; Modules</a>
+      <a href="../index_all.html">&bull; Overview</a>
+   </div>
+
+   <input id="filter" type="text" placeholder="Filter modules" />
+
+   <ul id="modulelist">
+      
+      <li><a href="../validator/index.html">validator</a></li>
+      </ul>
+</div>
+
+        </nav>
+    </div>
+    </body>
+</html>
