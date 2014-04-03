@@ -121,10 +121,10 @@
                                 <h3>Instance Methods</h3>
                 <ul class="propertyoverview">
                                         <li>
-                        <a href="#Validator.prototype.errorMessages" class="jsdoc-title"> errorMessages</a>(key)
+                        <a href="#Validator.prototype.getMessages" class="jsdoc-title"> getMessages</a>(key)
                     </li>
                                         <li>
-                        <a href="#Validator.prototype.hasErrors" class="jsdoc-title"> hasErrors</a>(name)
+                        <a href="#Validator.prototype.hasFailures" class="jsdoc-title"> hasFailures</a>(name)
                     </li>
                                         <li>
                         <a href="#Validator.prototype.validate" class="jsdoc-title"> validate</a>(name)
@@ -1093,10 +1093,10 @@ validator.validate("email").
          isEmail("Invalid email address provided");
 
 // returns true if a validation failed
-validator.hasErrors();
+validator.hasFailures();
 
 // returns an array with all error messages
-validator.errorMessages();</pre>
+validator.getMessages();</pre>
                 </div>
                                 <div>
                     <h4>Parameters</h4>
@@ -1120,9 +1120,9 @@ validator.errorMessages();</pre>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="Validator.prototype.errorMessages">
+            <div class="docitem" data-docitem="Validator.prototype.getMessages">
                 <h3 >
-                    <span class="itemtitle">Validator.prototype.<a id="Validator.prototype.errorMessages" href="#Validator.prototype.errorMessages" class="itemtitle itemname">errorMessages</a></span>
+                    <span class="itemtitle">Validator.prototype.<a id="Validator.prototype.getMessages" href="#Validator.prototype.getMessages" class="itemtitle itemname">getMessages</a></span>
                     <span class="itemtitle light">(key)</span></h3>
                 <div>
                     <p>Returns the validation failure messages.</p>
@@ -1151,9 +1151,9 @@ validator.errorMessages();</pre>
                 </div>
                         <hr />
             <!-- tpl-docitem -->
-            <div class="docitem" data-docitem="Validator.prototype.hasErrors">
+            <div class="docitem" data-docitem="Validator.prototype.hasFailures">
                 <h3 >
-                    <span class="itemtitle">Validator.prototype.<a id="Validator.prototype.hasErrors" href="#Validator.prototype.hasErrors" class="itemtitle itemname">hasErrors</a></span>
+                    <span class="itemtitle">Validator.prototype.<a id="Validator.prototype.hasFailures" href="#Validator.prototype.hasFailures" class="itemtitle itemname">hasFailures</a></span>
                     <span class="itemtitle light">(name)</span></h3>
                 <div>
                     <p>Returns true if any of the validations of this validator failed</p>
