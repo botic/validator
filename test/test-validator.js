@@ -151,7 +151,9 @@ exports.testSanitizers = function() {
    var obj = {
       "date": "Thu Jan 01 1970 00:00:00 GMT-00:00",
       "float": "123.456",
+      "floatEvil": "123456",
       "int": "123456",
+      "intEvil": "0123456",
       "boolean": "asdf",
       "booleanStrict": "1"
    };
@@ -160,7 +162,9 @@ exports.testSanitizers = function() {
 
    assert.strictEqual((validator.validate("date").toDate()).getTime(), 0);
    assert.strictEqual(validator.validate("float").toFloat(), 123.456);
+   assert.isNaN(validator.validate("floatEvil").toFloat());
    assert.strictEqual(validator.validate("int").toInt(), 123456);
+   assert.isNaN(validator.validate("intEvil").toInt());
    assert.strictEqual(validator.validate("boolean").toBoolean(), true);
    assert.strictEqual(validator.validate("booleanStrict").toBoolean(true), true);
 
