@@ -11,15 +11,15 @@ exports.testSimpleObject = function() {
    var validator = new Validator(obj);
 
    validator.validate("foo").hasLength(3, "error msg");
-   assert.isFalse(validator.hasErrors());
+   assert.isFalse(validator.hasFailures());
    assert.strictEqual(validator.getMessages().length, 0);
 
    validator.validate("foo").hasLength(4, "error msg").hasLength(5, "error msg 2");
-   assert.isTrue(validator.hasErrors());
+   assert.isTrue(validator.hasFailures());
    assert.strictEqual(validator.getMessages().length, 1);
 
    validator.validateAll("foo").hasLength(4, "error msg").hasLength(5, "error msg 2");
-   assert.isTrue(validator.hasErrors());
+   assert.isTrue(validator.hasFailures());
    assert.strictEqual(validator.getMessages().length, 2);
    assert.strictEqual(validator.getMessages("foo")[0], "error msg");
    assert.strictEqual(validator.getMessages("foo")[1], "error msg 2");
@@ -83,7 +83,7 @@ exports.testComplexValidObject = function() {
    validator.validate("matches").matches(/abcd/, "error msg matches");
    validator.validate("passes").passes(function(value) { return value === "abcd"; }, "error msg passes");
 
-   assert.isFalse(validator.hasErrors());
+   assert.isFalse(validator.hasFailures());
 
 };
 
@@ -142,7 +142,7 @@ exports.testComplexInvalidObject = function() {
    validator.validate("matches").matches(/12345/, "error msg matches");
    validator.validate("passes").passes(function(value) { return value !== "abcd"; }, "error msg passes");
 
-   assert.isTrue(validator.hasErrors());
+   assert.isTrue(validator.hasFailures());
    assert.strictEqual(validator.getMessages().length, 24);
 
 };
