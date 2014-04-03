@@ -12,19 +12,19 @@ exports.testSimpleObject = function() {
 
    validator.validate("foo").hasLength(3, "error msg");
    assert.isFalse(validator.hasErrors());
-   assert.strictEqual(validator.errorMessages().length, 0);
+   assert.strictEqual(validator.getMessages().length, 0);
 
    validator.validate("foo").hasLength(4, "error msg").hasLength(5, "error msg 2");
    assert.isTrue(validator.hasErrors());
-   assert.strictEqual(validator.errorMessages().length, 1);
+   assert.strictEqual(validator.getMessages().length, 1);
 
    validator.validateAll("foo").hasLength(4, "error msg").hasLength(5, "error msg 2");
    assert.isTrue(validator.hasErrors());
-   assert.strictEqual(validator.errorMessages().length, 2);
-   assert.strictEqual(validator.errorMessages("foo")[0], "error msg");
-   assert.strictEqual(validator.errorMessages("foo")[1], "error msg 2");
-   assert.strictEqual(validator.errorMessages()[0], "error msg");
-   assert.strictEqual(validator.errorMessages()[1], "error msg 2");
+   assert.strictEqual(validator.getMessages().length, 2);
+   assert.strictEqual(validator.getMessages("foo")[0], "error msg");
+   assert.strictEqual(validator.getMessages("foo")[1], "error msg 2");
+   assert.strictEqual(validator.getMessages()[0], "error msg");
+   assert.strictEqual(validator.getMessages()[1], "error msg 2");
 };
 
 
@@ -143,7 +143,7 @@ exports.testComplexInvalidObject = function() {
    validator.validate("passes").passes(function(value) { return value !== "abcd"; }, "error msg passes");
 
    assert.isTrue(validator.hasErrors());
-   assert.strictEqual(validator.errorMessages().length, 24);
+   assert.strictEqual(validator.getMessages().length, 24);
 
 };
 
