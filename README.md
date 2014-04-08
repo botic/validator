@@ -18,10 +18,10 @@ validator.validate("email")
    .isDefined("Email address is missing!")
    .isEmail("Invalid email address!");
 
-if (validator.hasErrors()) {
+if (validator.hasFailures()) {
    // Display errors
    return respone.html(
-      validator.errorMessages().join("<br>")
+      validator.getMessages().join("<br>")
    );
 }
 ```
