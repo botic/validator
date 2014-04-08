@@ -21,6 +21,7 @@ exports.testSimpleObject = function() {
    validator.validateAll("foo").hasLength(4, "error msg").hasLength(5, "error msg 2");
    assert.isTrue(validator.hasFailures());
    assert.strictEqual(validator.getMessages().length, 2);
+   assert.strictEqual(validator.getMessages(undefined).length, 2);
    assert.strictEqual(validator.getMessages("foo")[0], "error msg");
    assert.strictEqual(validator.getMessages("foo")[1], "error msg 2");
    assert.strictEqual(validator.getMessages()[0], "error msg");
