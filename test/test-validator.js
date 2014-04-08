@@ -27,7 +27,6 @@ exports.testSimpleObject = function() {
    assert.strictEqual(validator.getMessages()[1], "error msg 2");
 };
 
-
 exports.testComplexValidObject = function() {
    var obj = {
       "isAlpha": "asdfASDF",
@@ -145,6 +144,27 @@ exports.testComplexInvalidObject = function() {
    assert.isTrue(validator.hasFailures());
    assert.strictEqual(validator.getMessages().length, 24);
 
+};
+
+exports.testTrim = function() {
+   var obj = {
+      "foo": "   bar       ",
+      "empty": "           "
+   };
+
+   var validator = new Validator(obj);
+
+   validator.validate("foo").hasLength(13, "error msg");
+   assert.isFalse(validator.hasFailures());
+   assert.strictEqual(validator.getMessages().length, 0);
+
+   validator.validate("foo", true).hasLength(3, "error msg");
+   assert.isFalse(validator.hasFailures());
+   assert.strictEqual(validator.getMessages().length, 0);
+
+   validator.validate("empty", true).strictEqual("", "error msg 1").hasLength(0, "error msg 2");
+   assert.isFalse(validator.hasFailures());
+   assert.strictEqual(validator.getMessages().length, 0);
 };
 
 exports.testSanitizers = function() {
