@@ -5,7 +5,7 @@ var {Application} = require("stick");
 
 exports.testMiddleware = function() {
    var app = new Application();
-   app.configure("params", module.resolve("../lib/stick-validator.js"), "route");
+   app.configure("params", require("../lib/stick-validator"), "route");
 
    app.get("/", function(req) {
       req.validate("foo").hasLength(3, "not bar");

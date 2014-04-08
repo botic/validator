@@ -22,11 +22,17 @@
     
         <h1 class="modulename">Module validator</h1>
         <div class="fileoverview">
-            
+            <p>A module to validate and sanitize an object’s properties in RingoJS.
+It depends on Ringo’s <code>ringo/utils/strings</code> module for string validation.</p>
 
 
         </div>
 
+        
+        <div>
+            <h4> Example </h4>
+            <pre class="sh_javascript sh_sourceCode">var validator = new Validator({  "email": "foo.bar@example.com"});// validate a valuevalidator.validate("email").         isDefined("Email address is missing!").         isEmail("Invalid email address provided");// returns true if a validation failedvalidator.hasFailures();// returns an array with all error messagesvalidator.getMessages();</pre>
+        </div>
         <div class="classoverview">
 
             <div class="classes">
@@ -1346,7 +1352,7 @@ The function receives the value as first argument.</p>
                     <span class="itemtitle light">(name, trim)</span></h3>
                 <div>
                     <p>Main validation entry point. The result of this method contains
-various validation methods that can be chained. Note that this
+various validation functions that can be chained. Note that this
 validation object stops validating at the first fail.</p>
 
 
@@ -1365,7 +1371,7 @@ validation object stops validating at the first fail.</p>
                         <tr>
                             <td>Boolean</td>
                             <td class="paramname">trim</td>
-                            <td>Optional trim the value if it's a string</td>
+                            <td>Optional, trim the value if it's a string</td>
                         </tr>
                         </table>
                 </div>
@@ -1396,9 +1402,9 @@ validation object stops validating at the first fail.</p>
                     <span class="itemtitle light">(name, trim)</span></h3>
                 <div>
                     <p>Main validation entry point. The result of this method contains
-various validation methods that can be chained. Note that this
+various validation functions that can be chained. Note that this
 validation object does not stop at the first fail but continues
-to validate all validation methods.</p>
+to validate all validation functions.</p>
 
 
                 </div>
@@ -1416,7 +1422,7 @@ to validate all validation methods.</p>
                         <tr>
                             <td>Boolean</td>
                             <td class="paramname">trim</td>
-                            <td>Optional trim the value if it's a string</td>
+                            <td>Optional, trim the value if it's a string</td>
                         </tr>
                         </table>
                 </div>
@@ -1455,6 +1461,8 @@ to validate all validation methods.</p>
    <ul id="modulelist">
       
       <li><a href="../validator/index.html">validator</a></li>
+      
+      <li><a href="../stick-validator/index.html">validator/stick-validator</a></li>
       </ul>
 </div>
 
