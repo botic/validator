@@ -27,7 +27,22 @@
 
         <h2><a href="./validator/index.html"> validator </a></h2>
         <div class="jsdoc-fileoverview">
-            
+            <p>A module to validate and sanitize an object’s properties in RingoJS.
+It depends on Ringo’s <code>ringo/utils/strings</code> module for string validation.</p>
+
+
+        </div>
+
+        </li>
+        
+        <li >
+
+        <h2><a href="./stick-validator/index.html"> validator/stick-validator </a></h2>
+        <div class="jsdoc-fileoverview">
+            <p>Middleware to validate requests.
+Depending on the request method it automatically decides if it
+uses <code>req.queryParams</code> (default) or <code>req.postParams</code> (only for POST and PUT).
+The validator requires the <code>params</code> middleware to be configured.</p>
 
 
         </div>
@@ -50,6 +65,8 @@
    <ul id="modulelist">
       
       <li><a href="./validator/index.html">validator</a></li>
+      
+      <li><a href="./stick-validator/index.html">validator/stick-validator</a></li>
       </ul>
 </div>
 
