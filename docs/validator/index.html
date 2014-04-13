@@ -19,8 +19,7 @@
     <div class="main">
         <div class="content jsdoc">
         
-    
-        <h1 class="modulename">Module validator</h1>
+            <h1 class="modulename">Module validator</h1>
         <div class="fileoverview">
             <p>A module to validate and sanitize an object’s properties in RingoJS.
 It depends on Ringo’s <code>ringo/utils/strings</code> module for string validation.</p>
@@ -28,159 +27,140 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
 
         </div>
 
-        
-        <div>
+                <div>
             <h4> Example </h4>
-            <pre class="sh_javascript sh_sourceCode">var validator = new Validator({  "email": "foo.bar@example.com"});// validate a valuevalidator.validate("email").         isDefined("Email address is missing!").         isEmail("Invalid email address provided");// returns true if a validation failedvalidator.hasFailures();// returns an array with all error messagesvalidator.getMessages();</pre>
+            <pre class="sh_javascript sh_sourceCode">var validator = new Validator({
+  "email": "foo.bar@example.com"
+});
+
+// validate a value
+validator.validate("email").
+         isDefined("Email address is missing!").
+         isEmail("Invalid email address provided");
+
+// returns true if a validation failed
+validator.hasFailures();
+
+// returns an array with all error messages
+validator.getMessages();</pre>
         </div>
         <div class="classoverview">
 
             <div class="classes">
-                
-                <h2>Class <a href="#Validation" class="jsdoc-title">Validation</a></h2>
-                
-                <h3>Instance Methods</h3>
+                                <h2>Class <a href="#Validation" class="jsdoc-title">Validation</a></h2>
+                                <h3>Instance Methods</h3>
                 <ul class="propertyoverview">
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.equal" class="jsdoc-title"> equal</a>(obj, message)
                     </li>
-                    
-                    <li>
+                                        <li>
+                        <a href="#Validation.prototype.getValue" class="jsdoc-title"> getValue</a>()
+                    </li>
+                                        <li>
                         <a href="#Validation.prototype.hasLength" class="jsdoc-title"> hasLength</a>(length, message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isAlpha" class="jsdoc-title"> isAlpha</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isAlphanumeric" class="jsdoc-title"> isAlphanumeric</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isDateFormat" class="jsdoc-title"> isDateFormat</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isDefined" class="jsdoc-title"> isDefined</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isEmail" class="jsdoc-title"> isEmail</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isFalse" class="jsdoc-title"> isFalse</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isFileName" class="jsdoc-title"> isFileName</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isFloat" class="jsdoc-title"> isFloat</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isHexColor" class="jsdoc-title"> isHexColor</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isInt" class="jsdoc-title"> isInt</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isNumber" class="jsdoc-title"> isNumber</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isNumeric" class="jsdoc-title"> isNumeric</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isTrue" class="jsdoc-title"> isTrue</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.isUrl" class="jsdoc-title"> isUrl</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.lengthBetween" class="jsdoc-title"> lengthBetween</a>(minLength, maxLength, message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.matches" class="jsdoc-title"> matches</a>(regex, message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.maxLength" class="jsdoc-title"> maxLength</a>(maxLength, message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.minLength" class="jsdoc-title"> minLength</a>(minLength, message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.notNull" class="jsdoc-title"> notNull</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.passes" class="jsdoc-title"> passes</a>(func, message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.strictEqual" class="jsdoc-title"> strictEqual</a>(obj, message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.strictNotNull" class="jsdoc-title"> strictNotNull</a>(message)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.toBoolean" class="jsdoc-title"> toBoolean</a>(strictTrue)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.toDate" class="jsdoc-title"> toDate</a>()
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.toFloat" class="jsdoc-title"> toFloat</a>()
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validation.prototype.toInt" class="jsdoc-title"> toInt</a>(radix)
                     </li>
                     </ul>
-                
-                <h2>Class <a href="#Validator" class="jsdoc-title">Validator</a></h2>
-                
-                <h3>Instance Methods</h3>
+                                <h2>Class <a href="#Validator" class="jsdoc-title">Validator</a></h2>
+                                <h3>Instance Methods</h3>
                 <ul class="propertyoverview">
-                    
-                    <li>
+                                        <li>
                         <a href="#Validator.prototype.getMessages" class="jsdoc-title"> getMessages</a>(key)
                     </li>
-                    
-                    <li>
+                                        <li>
+                        <a href="#Validator.prototype.getValue" class="jsdoc-title"> getValue</a>(key)
+                    </li>
+                                        <li>
                         <a href="#Validator.prototype.hasFailures" class="jsdoc-title"> hasFailures</a>(name)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validator.prototype.validate" class="jsdoc-title"> validate</a>(name, trim)
                     </li>
-                    
-                    <li>
+                                        <li>
                         <a href="#Validator.prototype.validateAll" class="jsdoc-title"> validateAll</a>(name, trim)
                     </li>
                     </ul>
                 </div>
         </div>
         <div class="details">
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation">
                 <h3 class="classtitle">
@@ -191,26 +171,24 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>Object</td>
                             <td class="paramname">validation</td>
-                            <td>An object containing the name of the property,       the value, a validity state and an array of messages.</td>
+                            <td>An object containing the name of the property,
+       the value, a validity state and an array of messages.</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>Boolean</td>
                             <td class="paramname">stopOnFail</td>
-                            <td>If false the all validationmethod calls in a chain will be executed (optional, defaults to true)</td>
+                            <td>If false the all validation
+method calls in a chain will be executed (optional, defaults to true)</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -220,8 +198,7 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.equal">
                 <h3 >
@@ -232,26 +209,22 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>Object</td>
                             <td class="paramname">obj</td>
                             <td>The object to compare</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -261,8 +234,28 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validation.prototype.getValue">
+                <h3 >
+                    <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.getValue" href="#Validation.prototype.getValue" class="itemtitle itemname">getValue</a></span>
+                    <span class="itemtitle light">()</span></h3>
+                <div>
+                    <p>Returns the value of the validation.</p>
+
+
+                </div>
+                                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td>Current value of the validation</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.hasLength">
                 <h3 >
@@ -273,26 +266,22 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>Number</td>
                             <td class="paramname">length</td>
                             <td>The required length of value</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -302,8 +291,7 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isAlpha">
                 <h3 >
@@ -314,20 +302,17 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -337,8 +322,7 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isAlphanumeric">
                 <h3 >
@@ -349,20 +333,17 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -372,8 +353,7 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isDateFormat">
                 <h3 >
@@ -384,20 +364,17 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -407,8 +384,7 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isDefined">
                 <h3 >
@@ -419,20 +395,17 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -442,8 +415,7 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isEmail">
                 <h3 >
@@ -454,20 +426,17 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -477,8 +446,7 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isFalse">
                 <h3 >
@@ -489,20 +457,17 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -512,8 +477,7 @@ It depends on Ringo’s <code>ringo/utils/strings</code> module for string valid
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isFileName">
                 <h3 >
@@ -525,20 +489,17 @@ that are forbidden in file names.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -548,8 +509,7 @@ that are forbidden in file names.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isFloat">
                 <h3 >
@@ -560,20 +520,17 @@ that are forbidden in file names.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -583,8 +540,7 @@ that are forbidden in file names.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isHexColor">
                 <h3 >
@@ -596,20 +552,17 @@ It may also contain # as first character.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -619,8 +572,7 @@ It may also contain # as first character.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isInt">
                 <h3 >
@@ -631,20 +583,17 @@ It may also contain # as first character.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -654,8 +603,7 @@ It may also contain # as first character.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isNumber">
                 <h3 >
@@ -666,20 +614,17 @@ It may also contain # as first character.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -689,8 +634,7 @@ It may also contain # as first character.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isNumeric">
                 <h3 >
@@ -701,20 +645,17 @@ It may also contain # as first character.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -724,8 +665,7 @@ It may also contain # as first character.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isTrue">
                 <h3 >
@@ -736,20 +676,17 @@ It may also contain # as first character.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -759,8 +696,7 @@ It may also contain # as first character.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.isUrl">
                 <h3 >
@@ -771,20 +707,17 @@ It may also contain # as first character.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -794,8 +727,7 @@ It may also contain # as first character.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.lengthBetween">
                 <h3 >
@@ -806,32 +738,27 @@ It may also contain # as first character.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>Number</td>
                             <td class="paramname">minLength</td>
                             <td>The minimal length of value</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>Number</td>
                             <td class="paramname">maxLength</td>
                             <td>The maximum length of value</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -841,8 +768,7 @@ It may also contain # as first character.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.matches">
                 <h3 >
@@ -853,26 +779,22 @@ It may also contain # as first character.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>RegExp</td>
                             <td class="paramname">regex</td>
                             <td>The regular expression to match</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -882,8 +804,7 @@ It may also contain # as first character.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.maxLength">
                 <h3 >
@@ -894,26 +815,22 @@ It may also contain # as first character.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>Number</td>
                             <td class="paramname">maxLength</td>
                             <td>The maximum length of value</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -923,8 +840,7 @@ It may also contain # as first character.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.minLength">
                 <h3 >
@@ -935,26 +851,22 @@ It may also contain # as first character.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>Number</td>
                             <td class="paramname">minLength</td>
                             <td>The minimal length of value</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -964,8 +876,7 @@ It may also contain # as first character.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.notNull">
                 <h3 >
@@ -976,20 +887,17 @@ It may also contain # as first character.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -999,8 +907,7 @@ It may also contain # as first character.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.passes">
                 <h3 >
@@ -1012,26 +919,22 @@ The function receives the value as first argument.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>Function</td>
                             <td class="paramname">func</td>
                             <td>The validation function</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -1041,8 +944,7 @@ The function receives the value as first argument.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.strictEqual">
                 <h3 >
@@ -1053,26 +955,22 @@ The function receives the value as first argument.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>Object</td>
                             <td class="paramname">obj</td>
                             <td>The object to compare</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -1082,8 +980,7 @@ The function receives the value as first argument.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.strictNotNull">
                 <h3 >
@@ -1094,20 +991,17 @@ The function receives the value as first argument.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">message</td>
                             <td>The failure message</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -1117,8 +1011,7 @@ The function receives the value as first argument.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.toBoolean">
                 <h3 >
@@ -1129,112 +1022,100 @@ The function receives the value as first argument.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>Boolean</td>
                             <td class="paramname">strictTrue</td>
                             <td>only return true if value is strict "true" or "1"</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
-                            <td>Boolean</td>
-                            <td> The value as boolean</td>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
                         </tr>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.toDate">
                 <h3 >
                     <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.toDate" href="#Validation.prototype.toDate" class="itemtitle itemname">toDate</a></span>
                     <span class="itemtitle light">()</span></h3>
                 <div>
-                    <p>Converts the value to a Date object, if possible.</p>
+                    <p>Converts the value to a Date object or null if parsing failed.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
-                            <td>Date</td>
-                            <td> The value as Date, or null if parsing failed</td>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
                         </tr>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.toFloat">
                 <h3 >
                     <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.toFloat" href="#Validation.prototype.toFloat" class="itemtitle itemname">toFloat</a></span>
                     <span class="itemtitle light">()</span></h3>
                 <div>
-                    <p>Converts the value to a floating point number.</p>
+                    <p>Converts the value to a floating point number or NaN if if parsing failed.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
-                            <td>Number</td>
-                            <td> The value as floating point number, or NaN if if parsing failed</td>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
                         </tr>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validation.prototype.toInt">
                 <h3 >
                     <span class="itemtitle">Validation.prototype.<a id="Validation.prototype.toInt" href="#Validation.prototype.toInt" class="itemtitle itemname">toInt</a></span>
                     <span class="itemtitle light">(radix)</span></h3>
                 <div>
-                    <p>Converts the value to an integer number.</p>
+                    <p>Converts the value to an integer number or NaN if if parsing failed.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td></td>
                             <td class="paramname">radix</td>
                             <td></td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
-                            <td>Number</td>
-                            <td> The value as integer number, or NaN if if parsing failed</td>
+                            <td>Validation</td>
+                            <td> This validation instance</td>
                         </tr>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validator">
                 <h3 class="classtitle">
@@ -1245,25 +1126,34 @@ The function receives the value as first argument.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4> Example </h4>
-                    <pre class="sh_javascript sh_sourceCode">var validator = new Validator({  "email": "foo.bar@example.com"});// validate a valuevalidator.validate("email").         isDefined("Email address is missing!").         isEmail("Invalid email address provided");// returns true if a validation failedvalidator.hasFailures();// returns an array with all error messagesvalidator.getMessages();</pre>
+                    <pre class="sh_javascript sh_sourceCode">var validator = new Validator({
+  "email": "foo.bar@example.com"
+});
+
+// validate a value
+validator.validate("email").
+         isDefined("Email address is missing!").
+         isEmail("Invalid email address provided");
+
+// returns true if a validation failed
+validator.hasFailures();
+
+// returns an array with all error messages
+validator.getMessages();</pre>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td></td>
                             <td class="paramname">objectToValidate</td>
                             <td></td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -1273,8 +1163,7 @@ The function receives the value as first argument.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validator.prototype.getMessages">
                 <h3 >
@@ -1285,20 +1174,17 @@ The function receives the value as first argument.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">key</td>
                             <td>Optional key to limit the failure messages to a single validation</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -1308,8 +1194,38 @@ The function receives the value as first argument.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
+            <!-- tpl-docitem -->
+            <div class="docitem" data-docitem="Validator.prototype.getValue">
+                <h3 >
+                    <span class="itemtitle">Validator.prototype.<a id="Validator.prototype.getValue" href="#Validator.prototype.getValue" class="itemtitle itemname">getValue</a></span>
+                    <span class="itemtitle light">(key)</span></h3>
+                <div>
+                    <p>Returns the value for a validation.</p>
+
+
+                </div>
+                                <div>
+                    <h4>Parameters</h4>
+                    <table>
+                                                <tr>
+                            <td>String</td>
+                            <td class="paramname">key</td>
+                            <td>The key of the validation</td>
+                        </tr>
+                        </table>
+                </div>
+                                <div>
+                    <h4>Returns</h4>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td>The correspondending value for a validation</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validator.prototype.hasFailures">
                 <h3 >
@@ -1320,20 +1236,17 @@ The function receives the value as first argument.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">name</td>
                             <td>Optional name of a single value to check</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -1343,8 +1256,7 @@ The function receives the value as first argument.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validator.prototype.validate">
                 <h3 >
@@ -1357,26 +1269,22 @@ validation object stops validating at the first fail.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">name</td>
                             <td>The name of the value</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>Boolean</td>
                             <td class="paramname">trim</td>
                             <td>Optional, trim the value if it's a string</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -1385,16 +1293,14 @@ validation object stops validating at the first fail.</p>
                         </tr>
                     </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>See</h4>
                     <div class="extrainfo">
                         <a href="../Validator.prototype.validateAll/index.html">Validator.prototype.validateAll</a>
                     </div>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="Validator.prototype.validateAll">
                 <h3 >
@@ -1408,26 +1314,22 @@ to validate all validation functions.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">name</td>
                             <td>The name of the value</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>Boolean</td>
                             <td class="paramname">trim</td>
                             <td>Optional, trim the value if it's a string</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -1436,8 +1338,7 @@ to validate all validation functions.</p>
                         </tr>
                     </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>See</h4>
                     <div class="extrainfo">
                         <a href="../Validator.prototype.validate/index.html">Validator.prototype.validate</a>
@@ -1459,10 +1360,8 @@ to validate all validation functions.</p>
    <input id="filter" type="text" placeholder="Filter modules" />
 
    <ul id="modulelist">
-      
-      <li><a href="../validator/index.html">validator</a></li>
-      
-      <li><a href="../stick-validator/index.html">validator/stick-validator</a></li>
+            <li><a href="../validator/index.html">validator</a></li>
+            <li><a href="../stick-validator/index.html">validator/stick-validator</a></li>
       </ul>
 </div>
 

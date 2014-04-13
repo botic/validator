@@ -181,14 +181,40 @@ exports.testSanitizers = function() {
 
    var validator = new Validator(obj);
 
-   assert.strictEqual((validator.validate("date").toDate()).getTime(), 0);
-   assert.strictEqual(validator.validate("float").toFloat(), 123.456);
-   assert.isNaN(validator.validate("floatEvil").toFloat());
-   assert.strictEqual(validator.validate("int").toInt(), 123456);
-   assert.isNaN(validator.validate("intEvil").toInt());
-   assert.strictEqual(validator.validate("boolean").toBoolean(), true);
-   assert.strictEqual(validator.validate("booleanStrict").toBoolean(true), true);
+   assert.strictEqual(((validator.validate("date").toDate()).getValue()).getTime(), 0);
+   assert.strictEqual(validator.validate("float").toFloat().getValue(), 123.456);
+   assert.isNaN(validator.validate("floatEvil").toFloat().getValue());
+   assert.strictEqual(validator.validate("int").toInt().getValue(), 123456);
+   assert.isNaN(validator.validate("intEvil").toInt().getValue());
+   assert.strictEqual(validator.validate("boolean").toBoolean().getValue(), true);
+   assert.strictEqual(validator.validate("booleanStrict").toBoolean(true).getValue(), true);
 
+};
+
+exports.testGetValue = function() {
+   var obj = {
+      "email": "asdf@example.com",
+      "noemail": "foo.bar@baz@boo.com",
+      "trimmed": "   12345           ",
+      "username": "                  "
+   };
+
+   var validator = new Validator(obj);
+
+   assert.strictEqual(validator.validate("email").isEmail("Error Message").getValue(), "asdf@example.com");
+   assert.strictEqual(validator.validate("noemail").isEmail("Error Message").hasLength(1, "Error Message").getValue(), "foo.bar@baz@boo.com");
+   assert.strictEqual(validator.validateAll("email").isEmail("Error Message").getValue(), "asdf@example.com");
+   assert.strictEqual(validator.validateAll("noemail").isEmail("Error Message").hasLength(1, "Error Message").getValue(), "foo.bar@baz@boo.com");
+
+   assert.strictEqual(validator.getValue("email"), "asdf@example.com");
+   assert.strictEqual(validator.getValue("noemail"), "foo.bar@baz@boo.com");
+
+   // Trimmed values
+   assert.isNaN(validator.validate("trimmed").toInt().getValue());
+   assert.isNaN(validator.validate("trimmed", false).toInt().getValue());
+   assert.strictEqual(validator.validate("trimmed", true).toInt().getValue(), 12345);
+   assert.strictEqual(validator.validate("username").getValue(), "                  ");
+   assert.strictEqual(validator.validate("username", true).getValue(), "");
 };
 
 // Run the tests

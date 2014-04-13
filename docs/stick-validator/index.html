@@ -19,8 +19,7 @@
     <div class="main">
         <div class="content jsdoc">
         
-    
-        <h1 class="modulename">Module validator/stick-validator</h1>
+            <h1 class="modulename">Module validator/stick-validator</h1>
         <div class="fileoverview">
             <p>Middleware to validate requests.
 Depending on the request method it automatically decides if it
@@ -30,34 +29,38 @@ The validator requires the <code>params</code> middleware to be configured.</p>
 
         </div>
 
-        
-        <div>
+                <div>
             <h4> Example </h4>
-            <pre class="sh_javascript sh_sourceCode">app.configure("params", require("stick-validator"), "route");app.get("/", function(req) {  req.validate("countryCode", true).hasLength(3, "Invalid country code!");  req.validate("email").isDefined("Email missing!").isEmail("Invalid email!");  if (req.hasFailures()) {    return response.html(req.failureMessages().join("&lt;br&gt;"));  }  return response.html("Ok");});</pre>
+            <pre class="sh_javascript sh_sourceCode">app.configure("params", require("stick-validator"), "route");
+
+app.get("/", function(req) {
+  req.validate("countryCode", true).hasLength(3, "Invalid country code!");
+  req.validate("email").isDefined("Email missing!").isEmail("Invalid email!");
+
+  if (req.hasFailures()) {
+    return response.html(req.failureMessages().join("&lt;br&gt;"));
+  }
+
+  return response.html("Ok");
+});</pre>
         </div>
         <div class="classoverview">
 
-            
-            <h2 class="functions">Functions</h2>
+                        <h2 class="functions">Functions</h2>
             <ul class="functions propertyoverview">
-                
-                <li>
+                                <li>
                     <a href="#middleware" class="jsdoc-title"> middleware</a>(next, app)
                 </li>
-                
-                <li>
+                                <li>
                     <a href="#request.failureMessages" class="jsdoc-title"> request.failureMessages</a>(name)
                 </li>
-                
-                <li>
+                                <li>
                     <a href="#request.hasFailures" class="jsdoc-title"> request.hasFailures</a>(name)
                 </li>
-                
-                <li>
+                                <li>
                     <a href="#request.validate" class="jsdoc-title"> request.validate</a>(name, trim)
                 </li>
-                
-                <li>
+                                <li>
                     <a href="#request.validateAll" class="jsdoc-title"> request.validateAll</a>(name, trim)
                 </li>
                 </ul>
@@ -65,8 +68,7 @@ The validator requires the <code>params</code> middleware to be configured.</p>
                 </div>
         </div>
         <div class="details">
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="middleware">
                 <h3 >
@@ -77,26 +79,22 @@ The validator requires the <code>params</code> middleware to be configured.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>Function</td>
                             <td class="paramname">next</td>
                             <td>the wrapped middleware chain</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>Object</td>
                             <td class="paramname">app</td>
                             <td>the Stick Application object</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -106,8 +104,7 @@ The validator requires the <code>params</code> middleware to be configured.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="request.failureMessages">
                 <h3 >
@@ -118,20 +115,17 @@ The validator requires the <code>params</code> middleware to be configured.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">name</td>
                             <td>Optional, name to limit the messages to a single parameter</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -141,8 +135,7 @@ The validator requires the <code>params</code> middleware to be configured.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="request.hasFailures">
                 <h3 >
@@ -153,20 +146,17 @@ The validator requires the <code>params</code> middleware to be configured.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">name</td>
                             <td>Optional, name of a single parameter to check</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -176,8 +166,7 @@ The validator requires the <code>params</code> middleware to be configured.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="request.validate">
                 <h3 >
@@ -190,26 +179,22 @@ validation object stops validating at the first fail.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">name</td>
                             <td>The name of the request parameter</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>Boolean</td>
                             <td class="paramname">trim</td>
                             <td>Optional, trim the value of the parameter</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -219,8 +204,7 @@ validation object stops validating at the first fail.</p>
                     </table>
                 </div>
                 </div>
-            
-            <hr />
+                        <hr />
             <!-- tpl-docitem -->
             <div class="docitem" data-docitem="request.validateAll">
                 <h3 >
@@ -232,26 +216,22 @@ various validation functions that can be chained.</p>
 
 
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Parameters</h4>
                     <table>
-                        
-                        <tr>
+                                                <tr>
                             <td>String</td>
                             <td class="paramname">name</td>
                             <td>The name of the request parameter</td>
                         </tr>
-                        
-                        <tr>
+                                                <tr>
                             <td>Boolean</td>
                             <td class="paramname">trim</td>
                             <td>Optional, trim the value of the parameter</td>
                         </tr>
                         </table>
                 </div>
-                
-                <div>
+                                <div>
                     <h4>Returns</h4>
                     <table>
                         <tr>
@@ -276,10 +256,8 @@ various validation functions that can be chained.</p>
    <input id="filter" type="text" placeholder="Filter modules" />
 
    <ul id="modulelist">
-      
-      <li><a href="../validator/index.html">validator</a></li>
-      
-      <li><a href="../stick-validator/index.html">validator/stick-validator</a></li>
+            <li><a href="../validator/index.html">validator</a></li>
+            <li><a href="../stick-validator/index.html">validator/stick-validator</a></li>
       </ul>
 </div>
 
