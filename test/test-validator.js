@@ -52,6 +52,12 @@ exports.testComplexValidObject = function() {
       "isDefined": "defined",
       "notNull": "notNull",
       "strictNotNull": undefined,
+      "isNull": undefined,
+      "strictIsNull": null,
+      "greaterThan": "123456",
+      "lessThan": "123456",
+      "isNaN": "123456-4578",
+      "isNotNaN": "123456",
       "matches": "abcd",
       "passes": "abcd"
    };
@@ -80,6 +86,12 @@ exports.testComplexValidObject = function() {
    validator.validate("isDefined").isDefined("error msg isDefined");
    validator.validate("notNull").notNull("error msg notNull");
    validator.validate("strictNotNull").strictNotNull("error msg strictNotNull");
+   validator.validate("isNull").isNull("error msg isNull");
+   validator.validate("strictIsNull").strictIsNull("error msg strictIsNull");
+   validator.validate("greaterThan").toInt().greaterThan(123455, "not greater than");
+   validator.validate("lessThan").toInt().lessThan(123457, "not less than");
+   validator.validate("isNaN").toInt().isNaN("isNaN");
+   validator.validate("isNotNaN").toInt().isNotNaN("isNotNaN");
    validator.validate("matches").matches(/abcd/, "error msg matches");
    validator.validate("passes").passes(function(value) { return value === "abcd"; }, "error msg passes");
 
@@ -109,8 +121,14 @@ exports.testComplexInvalidObject = function() {
       "isTrue": false,
       "isFalse": true,
       "isDefined": undefined,
+      "isNull": "",
+      "strictIsNull": undefined,
       "notNull": undefined,
       "strictNotNull": null,
+      "greaterThan": "123456",
+      "lessThan": "123456",
+      "isNaN": "123456",
+      "isNotNaN": "123456-4578",
       "matches": "abcd",
       "passes": "abcd"
    };
@@ -137,13 +155,19 @@ exports.testComplexInvalidObject = function() {
    validator.validate("isTrue").isTrue("error msg isTrue");
    validator.validate("isFalse").isFalse("error msg isFalse");
    validator.validate("isDefined").isDefined("error msg isDefined");
+   validator.validate("isNull").isNull("error msg isNull");
+   validator.validate("strictIsNull").strictIsNull("error msg strictIsNull");
    validator.validate("notNull").notNull("error msg notNull");
    validator.validate("strictNotNull").strictNotNull("error msg strictNotNull");
+   validator.validate("greaterThan").toInt().greaterThan(123457, "not greater than");
+   validator.validate("lessThan").toInt().lessThan(123455, "not less than");
+   validator.validate("isNaN").toInt().isNaN("isNaN");
+   validator.validate("isNotNaN").toInt().isNotNaN("isNotNaN");
    validator.validate("matches").matches(/12345/, "error msg matches");
    validator.validate("passes").passes(function(value) { return value !== "abcd"; }, "error msg passes");
 
    assert.isTrue(validator.hasFailures());
-   assert.strictEqual(validator.getMessages().length, 24);
+   assert.strictEqual(validator.getMessages().length, 30);
 
 };
 
