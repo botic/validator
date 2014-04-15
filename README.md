@@ -9,6 +9,7 @@ In a Web application you can use the validator to validate the submitted data:
 
 ```javascript
 var validator = new Validator(req.postParams);
+
 validator.validate("username")
    .isDefined("Username is missing!")
    .minLength(3, "Username is too short!"),
@@ -17,6 +18,10 @@ validator.validate("username")
 validator.validate("email")
    .isDefined("Email address is missing!")
    .isEmail("Invalid email address!");
+
+validator.validate("age")
+   .isInt("Invalid age!")
+   .toInt().greaterThan(17, "You need to be 18 years old!");
 
 if (validator.hasFailures()) {
    // Display errors
