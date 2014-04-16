@@ -5,7 +5,7 @@ var {Application} = require("stick");
 
 exports.testMiddleware = function() {
    var app = new Application();
-   app.configure("params", require("../lib/stick-validator"), "route");
+   app.configure("params", require("../lib/validator"), "route");
 
    app.get("/", function(req) {
       req.validate("foo").hasLength(3, "not bar");
@@ -30,6 +30,7 @@ exports.testMiddleware = function() {
       req.validate("fooTrim", true).hasLength(3, "not bar trim");
       req.validate("int").isInt("not an int");
 
+      assert.strictEqual("12345", req.validator.getValue("int"));
       assert.isFalse(req.hasFailures(), "Expected no failures");
       assert.strictEqual(0, req.failureMessages().length, "Expected no failure messages");
    });
