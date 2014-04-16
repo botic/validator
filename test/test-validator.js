@@ -260,6 +260,17 @@ exports.testGetValues = function() {
    assert.deepEqual(obj, validator.getValues());
 };
 
+exports.testHasValue = function() {
+   var invalid = [null, undefined, ""];
+   var params = {};
+   for each (let value in invalid) {
+      params.test = value;
+      let validator = new Validator(params);
+      validator.validate("test").hasValue("message");
+      assert.isTrue(validator.hasFailures("test"));
+   }
+};
+
 // Run the tests
 if (require.main == module.id) {
    system.exit(require('test').run(exports));
