@@ -241,6 +241,16 @@ exports.testGetValue = function() {
    assert.strictEqual(validator.validate("username", true).getValue(), "");
 };
 
+exports.testGetValues = function() {
+   var obj = {
+      "one": "one",
+      "two": 2
+   };
+   var validator = new Validator(obj);
+   Object.keys(obj).forEach(validator.validate, validator);
+   assert.deepEqual(obj, validator.getValues());
+};
+
 // Run the tests
 if (require.main == module.id) {
    system.exit(require('test').run(exports));
