@@ -271,6 +271,27 @@ exports.testHasValue = function() {
    }
 };
 
+exports.testLengthValidations = function() {
+   var invalid = [null, undefined, "", "abcd"];
+   var params = {};
+   for each (let value in invalid) {
+      params.test = value;
+      let asString = String(value);
+      let validator = new Validator(params);
+      validator.validate("test").minLength(asString.length + 1);
+      assert.isTrue(validator.hasFailures("test"));
+      validator = new Validator(params);
+      validator.validate("test").maxLength(asString.length - 1);
+      assert.isTrue(validator.hasFailures("test"));
+      validator = new Validator(params);
+      validator.validate("test").lengthBetween(asString.length + 1, asString.length -1);
+      assert.isTrue(validator.hasFailures("test"));
+      validator = new Validator(params);
+      validator.validate("test").hasLength(asString.length - 1);
+      assert.isTrue(validator.hasFailures("test"));
+   }
+};
+
 // Run the tests
 if (require.main == module.id) {
    system.exit(require('test').run(exports));
