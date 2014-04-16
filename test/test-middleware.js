@@ -13,7 +13,7 @@ exports.testMiddleware = function() {
       req.validate("int").isInt("not an int");
 
       assert.isFalse(req.hasFailures(), "Expected no failures");
-      assert.strictEqual(0, req.failureMessages().length, "Expected no failure messages");
+      assert.strictEqual(0, Object.keys(req.failureMessages()).length, "Expected no failure messages");
    });
 
    app.del("/", function(req) {
@@ -22,7 +22,7 @@ exports.testMiddleware = function() {
       req.validate("int").isInt("not an int");
 
       assert.isFalse(req.hasFailures(), "Expected no failures");
-      assert.strictEqual(0, req.failureMessages().length, "Expected no failure messages");
+      assert.strictEqual(0, Object.keys(req.failureMessages()).length, "Expected no failure messages");
    });
 
    app.post("/", function(req) {
@@ -32,7 +32,7 @@ exports.testMiddleware = function() {
 
       assert.strictEqual("12345", req.validator.getValue("int"));
       assert.isFalse(req.hasFailures(), "Expected no failures");
-      assert.strictEqual(0, req.failureMessages().length, "Expected no failure messages");
+      assert.strictEqual(0, Object.keys(req.failureMessages()).length, "Expected no failure messages");
    });
 
    app.put("/", function(req) {
@@ -41,7 +41,7 @@ exports.testMiddleware = function() {
       req.validate("int").isInt("not an int");
 
       assert.isFalse(req.hasFailures(), "Expected no failures");
-      assert.strictEqual(0, req.failureMessages().length, "Expected no failure messages");
+      assert.strictEqual(0, Object.keys(req.failureMessages()).length, "Expected no failure messages");
    });
 
 
