@@ -200,7 +200,12 @@ exports.testSanitizers = function() {
       "int": "123456",
       "intEvil": "0123456",
       "boolean": "asdf",
-      "booleanStrict": "1"
+      "booleanStrict": "1",
+      "undefined": undefined,
+      "null": null,
+      "zero": "0",
+      "false": "false",
+      "emptyString": ""
    };
 
    var validator = new Validator(obj);
@@ -210,9 +215,13 @@ exports.testSanitizers = function() {
    assert.isNaN(validator.validate("floatEvil").toFloat().getValue());
    assert.strictEqual(validator.validate("int").toInt().getValue(), 123456);
    assert.isNaN(validator.validate("intEvil").toInt().getValue());
-   assert.strictEqual(validator.validate("boolean").toBoolean().getValue(), true);
-   assert.strictEqual(validator.validate("booleanStrict").toBoolean(true).getValue(), true);
-
+   assert.isTrue(validator.validate("boolean").toBoolean().getValue());
+   assert.isTrue(validator.validate("booleanStrict").toBoolean(true).getValue());
+   assert.isFalse(validator.validate("undefined").toBoolean().getValue());
+   assert.isFalse(validator.validate("null").toBoolean().getValue());
+   assert.isFalse(validator.validate("zero").toBoolean().getValue());
+   assert.isFalse(validator.validate("false").toBoolean().getValue());
+   assert.isFalse(validator.validate("emptyString").toBoolean().getValue());
 };
 
 exports.testGetValue = function() {
