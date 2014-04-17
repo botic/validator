@@ -12,20 +12,20 @@ exports.testSimpleObject = function() {
 
    validator.validate("foo").hasLength(3, "error msg");
    assert.isFalse(validator.hasFailures());
-   assert.strictEqual(validator.getMessages().length, 0);
+   assert.strictEqual(validator.getMessages("foo").length, 0);
 
    validator.validate("foo").hasLength(4, "error msg").hasLength(5, "error msg 2");
    assert.isTrue(validator.hasFailures());
-   assert.strictEqual(validator.getMessages().length, 1);
+   assert.strictEqual(validator.getMessages("foo").length, 1);
 
    validator.validateAll("foo").hasLength(4, "error msg").hasLength(5, "error msg 2");
    assert.isTrue(validator.hasFailures());
-   assert.strictEqual(validator.getMessages().length, 2);
-   assert.strictEqual(validator.getMessages(undefined).length, 2);
+   assert.strictEqual(validator.getMessages("foo").length, 2);
+   assert.strictEqual(validator.getMessages(undefined).foo.length, 2);
    assert.strictEqual(validator.getMessages("foo")[0], "error msg");
    assert.strictEqual(validator.getMessages("foo")[1], "error msg 2");
-   assert.strictEqual(validator.getMessages()[0], "error msg");
-   assert.strictEqual(validator.getMessages()[1], "error msg 2");
+   assert.strictEqual(validator.getMessages().foo[0], "error msg");
+   assert.strictEqual(validator.getMessages().foo[1], "error msg 2");
 };
 
 exports.testComplexValidObject = function() {
@@ -167,7 +167,11 @@ exports.testComplexInvalidObject = function() {
    validator.validate("passes").passes(function(value) { return value !== "abcd"; }, "error msg passes");
 
    assert.isTrue(validator.hasFailures());
-   assert.strictEqual(validator.getMessages().length, 30);
+   var messages = [];
+   for each (let arr in validator.getMessages()) {
+      messages = messages.concat(arr);
+   }
+   assert.strictEqual(messages.length, 30);
 
 };
 
@@ -181,15 +185,15 @@ exports.testTrim = function() {
 
    validator.validate("foo").hasLength(13, "error msg");
    assert.isFalse(validator.hasFailures());
-   assert.strictEqual(validator.getMessages().length, 0);
+   assert.strictEqual(validator.getMessages("foo").length, 0);
 
    validator.validate("foo", true).hasLength(3, "error msg");
    assert.isFalse(validator.hasFailures());
-   assert.strictEqual(validator.getMessages().length, 0);
+   assert.strictEqual(validator.getMessages("foo").length, 0);
 
    validator.validate("empty", true).strictEqual("", "error msg 1").hasLength(0, "error msg 2");
    assert.isFalse(validator.hasFailures());
-   assert.strictEqual(validator.getMessages().length, 0);
+   assert.strictEqual(validator.getMessages("empty").length, 0);
 };
 
 exports.testSanitizers = function() {
