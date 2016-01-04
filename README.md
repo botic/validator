@@ -12,7 +12,7 @@ var validator = new Validator(req.postParams);
 
 validator.validate("username", true) // true --> trim the value
    .isDefined("Username is missing!")
-   .minLength(3, "Username is too short!"),
+   .minLength(3, "Username is too short!")
    .maxLength(255, "Username is too long!");
 
 validator.validate("email")
