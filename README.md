@@ -29,7 +29,8 @@ log.debug("Age: " +  validator.getValue("age"));
 if (validator.hasFailures()) {
    // Display errors
    return respone.html(
-      validator.getMessages().join("<br>")
+      // returns an object with grouped error messages
+      validator.getMessages()
    );
 }
 ```
