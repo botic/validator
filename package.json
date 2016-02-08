@@ -29,7 +29,9 @@
          "email": "robert@nomatic.org"
       }
    ],
-   "dependencies": { },
+   "dependencies": {
+      "stick": ">=0.4"
+   },
    "licenses": [
       {
          "type": "MIT",
