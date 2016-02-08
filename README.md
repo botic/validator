@@ -1,7 +1,8 @@
 validator
 =========
 
-Validator is a lightweight validation and sanitization library for RingoJS. It’s using the `ringo/utils/strings` module for string validation.
+Validator is a lightweight validation and sanitization library for RingoJS.
+It’s using the `ringo/utils/strings` module for string validation.
 
 ## Example
 
@@ -30,6 +31,7 @@ if (validator.hasFailures()) {
    // Display errors
    return respone.html(
       // returns an object with grouped error messages
+      // e.g. { "age": ["Invalid age!"], "email": […] }
       validator.getMessages()
    );
 }

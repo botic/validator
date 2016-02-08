@@ -205,6 +205,7 @@ exports.testSanitizers = function() {
       "intEvil": "0123456",
       "boolean": "asdf",
       "booleanStrict": "1",
+      "booleanTrueString": "true",
       "undefined": undefined,
       "null": null,
       "zero": "0",
@@ -226,6 +227,16 @@ exports.testSanitizers = function() {
    assert.isFalse(validator.validate("zero").toBoolean().getValue());
    assert.isFalse(validator.validate("false").toBoolean().getValue());
    assert.isFalse(validator.validate("emptyString").toBoolean().getValue());
+
+   // more strict tests for booleans
+   assert.isTrue(validator.validate("booleanTrueString").toBoolean(true).getValue());
+   assert.isTrue(validator.validate("booleanStrict").toBoolean(true).getValue());
+   assert.isFalse(validator.validate("boolean").toBoolean(true).getValue());
+   assert.isFalse(validator.validate("undefined").toBoolean(true).getValue());
+   assert.isFalse(validator.validate("null").toBoolean(true).getValue());
+   assert.isFalse(validator.validate("zero").toBoolean(true).getValue());
+   assert.isFalse(validator.validate("false").toBoolean(true).getValue());
+   assert.isFalse(validator.validate("emptyString").toBoolean(true).getValue());
 };
 
 exports.testGetValue = function() {
