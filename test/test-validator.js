@@ -97,6 +97,9 @@ exports.testComplexValidObject = function() {
 
    assert.isFalse(validator.hasFailures());
 
+   assert.throws(function() { validator.validate("passes").passes(); });
+   assert.throws(function() { validator.validate("passes").passes("asdf"); });
+   assert.throws(function() { validator.validate("passes").passes(123456); });
 };
 
 exports.testComplexInvalidObject = function() {
@@ -199,6 +202,7 @@ exports.testTrim = function() {
 exports.testSanitizers = function() {
    var obj = {
       "date": "Thu Jan 01 1970 00:00:00 GMT-00:00",
+      "dateEvil": "asdfsdfasdf",
       "float": "123.456",
       "floatEvil": "123456",
       "int": "123456",
@@ -216,6 +220,7 @@ exports.testSanitizers = function() {
    var validator = new Validator(obj);
 
    assert.strictEqual(((validator.validate("date").toDate()).getValue()).getTime(), 0);
+   assert.isNaN((validator.validate("dateEvil").toDate()).getValue());
    assert.strictEqual(validator.validate("float").toFloat().getValue(), 123.456);
    assert.isNaN(validator.validate("floatEvil").toFloat().getValue());
    assert.strictEqual(validator.validate("int").toInt().getValue(), 123456);
@@ -305,6 +310,24 @@ exports.testLengthValidations = function() {
       validator.validate("test").hasLength(asString.length - 1);
       assert.isTrue(validator.hasFailures("test"));
    }
+};
+
+exports.testToValue = function() {
+   var obj = {
+      "a": 1,
+      "b": "foo.bar@baz@boo.com",
+      "c": "   12345           "
+   };
+
+   var validator = new Validator(obj);
+
+   assert.strictEqual(validator.validate("a").toValue(function(val) { return 5 + val; }).getValue(), 6);
+   assert.strictEqual(validator.validate("b").toValue(function(val) { return val.replace(/\@/g, ""); }).getValue(), "foo.barbazboo.com");
+   assert.strictEqual(validator.validate("c").toValue(function(val) { return parseInt(val.trim()); }).getValue(), 12345);
+
+   assert.throws(function() { validator.validate("a").toValue(); });
+   assert.throws(function() { validator.validate("a").toValue("abc"); });
+   assert.throws(function() { validator.validate("a").toValue(12345); });
 };
 
 // Run the tests
