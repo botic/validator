@@ -330,6 +330,22 @@ exports.testToValue = function() {
    assert.throws(function() { validator.validate("a").toValue(12345); });
 };
 
+exports.testHashIsNotAnObject = function() {
+   var obj = {
+      "a": 1,
+      "b": "foo.bar@baz@boo.com",
+      "c": "   12345           "
+   };
+
+   var validator = new Validator(obj);
+
+   //assert.strictEqual(validator.validate("hasOwnProperty"));
+   validator.validate("hasOwnProperty").toValue(function(val) {
+      assert.isFalse(typeof val === "function");
+      return val;
+   });
+};
+
 // Run the tests
 if (require.main == module.id) {
    system.exit(require('test').run(exports));
