@@ -108,6 +108,8 @@ exports.testComplexInvalidObject = function() {
       "isAlphanumeric": "asdfASDF12345#",
       "isDateFormat": "dd-MM-yyyy NOTADATEFORMAT",
       "isUrl": "invalid",
+      "isUrl2": 1,
+      "isUrl3": {},
       "isEmail": "invalid@",
       "isFileName": "/asdf/asdf/asdf/",
       "isHexColor": "#1234567",
@@ -142,6 +144,8 @@ exports.testComplexInvalidObject = function() {
    validator.validate("isAlphanumeric").isAlphanumeric("error msg isAlphanumeric");
    validator.validate("isDateFormat").isDateFormat("error msg isDateFormat");
    validator.validate("isUrl").isUrl("error msg isUrl");
+   validator.validate("isUrl2").isUrl("error msg isUrl");
+   validator.validate("isUrl3").isUrl("error msg isUrl");
    validator.validate("isEmail").isEmail("error msg isEmail");
    validator.validate("isFileName").isFileName("error msg isFileName");
    validator.validate("isHexColor").isHexColor("error msg isHexColor");
@@ -174,7 +178,7 @@ exports.testComplexInvalidObject = function() {
    for each (let arr in validator.getMessages()) {
       messages = messages.concat(arr);
    }
-   assert.strictEqual(messages.length, 30);
+   assert.strictEqual(messages.length, 32);
 
 };
 
@@ -344,6 +348,34 @@ exports.testHashIsNotAnObject = function() {
       assert.isFalse(typeof val === "function");
       return val;
    });
+};
+
+exports.testOptional = function() {
+   var obj = {
+      "a": "1",
+      "b": "c"
+   };
+
+   var validator = new Validator(obj);
+
+   validator.validate("a").optional().isInt().toInt();
+   assert.isFalse(validator.hasFailures("a"));
+   assert.strictEqual(validator.getValue("a"), 1);
+
+   validator.validate("b").optional().isAlpha();
+   assert.isFalse(validator.hasFailures("b"));
+   assert.strictEqual(validator.getValue("b"), "c");
+
+   validator.validate("d").optional().isAlpha();
+   assert.isFalse(validator.hasFailures("d"));
+   assert.strictEqual(validator.getValue("d"), undefined);
+
+   validator.validate("e").optional("12345").isInt().toInt();
+   assert.isFalse(validator.hasFailures("e"));
+   assert.strictEqual(validator.getValue("e"), 12345);
+
+   validator.validate("e").optional().isInt().toInt();
+   assert.isFalse(validator.hasFailures("e"));
 };
 
 // Run the tests
