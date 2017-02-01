@@ -376,6 +376,10 @@ exports.testOptional = function() {
 
    validator.validate("e").optional().isInt().toInt();
    assert.isFalse(validator.hasFailures("e"));
+
+   validator.validate("f").optional("");
+   assert.isFalse(validator.hasFailures("f"));
+   assert.strictEqual(validator.getValue("f"), "");
 };
 
 // Run the tests
