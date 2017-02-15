@@ -382,6 +382,33 @@ exports.testOptional = function() {
    assert.strictEqual(validator.getValue("f"), "");
 };
 
+exports.testPlainObjects = function() {
+   var obj = {
+      "a": 1,
+      "b": 2.345678,
+      "c": "1",
+      "d": "2.345678"
+   };
+
+   var validator = new Validator(obj);
+
+   validator.validate("a").isInt().toInt();
+   assert.isFalse(validator.hasFailures("a"));
+   assert.strictEqual(validator.getValue("a"), 1);
+
+   validator.validate("b").isFloat().toFloat();
+   assert.isFalse(validator.hasFailures("b"));
+   assert.strictEqual(validator.getValue("b"), 2.345678);
+
+   validator.validate("c").isInt().toInt();
+   assert.isFalse(validator.hasFailures("c"));
+   assert.strictEqual(validator.getValue("c"), 1);
+
+   validator.validate("d").isFloat().toFloat();
+   assert.isFalse(validator.hasFailures("d"));
+   assert.strictEqual(validator.getValue("d"), 2.345678);
+};
+
 // Run the tests
 if (require.main == module.id) {
    system.exit(require('test').run(exports));
