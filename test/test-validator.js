@@ -387,7 +387,11 @@ exports.testPlainObjects = function() {
       "a": 1,
       "b": 2.345678,
       "c": "1",
-      "d": "2.345678"
+      "d": "2.345678",
+      "e": 1,
+      "f": 2.345678,
+      "g": 1,
+      "h": 2.345678
    };
 
    var validator = new Validator(obj);
@@ -400,13 +404,27 @@ exports.testPlainObjects = function() {
    assert.isFalse(validator.hasFailures("b"));
    assert.strictEqual(validator.getValue("b"), 2.345678);
 
-   validator.validate("c").isInt().toInt();
+   validator.validate("c").isString().isInt().toInt();
    assert.isFalse(validator.hasFailures("c"));
    assert.strictEqual(validator.getValue("c"), 1);
 
-   validator.validate("d").isFloat().toFloat();
+   validator.validate("d").isString().isFloat().toFloat();
    assert.isFalse(validator.hasFailures("d"));
    assert.strictEqual(validator.getValue("d"), 2.345678);
+
+   validator.validate("e").isNumeric().toInt();
+   assert.isFalse(validator.hasFailures("e"));
+   assert.strictEqual(validator.getValue("e"), 1);
+
+   validator.validate("f").isNumeric().toFloat();
+   assert.isFalse(validator.hasFailures("f"));
+   assert.strictEqual(validator.getValue("f"), 2.345678);
+
+   validator.validate("g").isString().toInt();
+   assert.isTrue(validator.hasFailures("g"));
+
+   validator.validate("h").isString().toFloat();
+   assert.isTrue(validator.hasFailures("h"));
 };
 
 // Run the tests
