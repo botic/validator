@@ -1,14 +1,14 @@
-var assert = require("assert");
-var system = require("system");
+const assert = require("assert");
+const system = require("system");
 
-var {Validator} = require("../lib/validator.js");
+const {Validator} = require("../lib/validator.js");
 
 exports.testSimpleObject = function() {
-   var obj = {
+   const obj = {
       "foo": "bar"
    };
 
-   var validator = new Validator(obj);
+   const validator = new Validator(obj);
 
    validator.validate("foo").hasLength(3, "error msg");
    assert.isFalse(validator.hasFailures());
@@ -29,7 +29,7 @@ exports.testSimpleObject = function() {
 };
 
 exports.testComplexValidObject = function() {
-   var obj = {
+   const obj = {
       "isAlpha": "asdfASDF",
       "isAlphanumeric": "asdfASDF12345",
       "isDateFormat": "dd-MM-yyyy",
@@ -62,7 +62,7 @@ exports.testComplexValidObject = function() {
       "passes": "abcd"
    };
 
-   var validator = new Validator(obj);
+   const validator = new Validator(obj);
 
    validator.validate("isAlpha").isAlpha("error msg isAlpha");
    validator.validate("isAlphanumeric").isAlphanumeric("error msg isAlphanumeric");
@@ -103,7 +103,7 @@ exports.testComplexValidObject = function() {
 };
 
 exports.testComplexInvalidObject = function() {
-   var obj = {
+   const obj = {
       "isAlpha": "asdfASDF1",
       "isAlphanumeric": "asdfASDF12345#",
       "isDateFormat": "dd-MM-yyyy NOTADATEFORMAT",
@@ -138,7 +138,7 @@ exports.testComplexInvalidObject = function() {
       "passes": "abcd"
    };
 
-   var validator = new Validator(obj);
+   const validator = new Validator(obj);
 
    validator.validate("isAlpha").isAlpha("error msg isAlpha");
    validator.validate("isAlphanumeric").isAlphanumeric("error msg isAlphanumeric");
@@ -174,7 +174,7 @@ exports.testComplexInvalidObject = function() {
    validator.validate("passes").passes(function(value) { return value !== "abcd"; }, "error msg passes");
 
    assert.isTrue(validator.hasFailures());
-   var messages = [];
+   let messages = [];
    for each (let arr in validator.getMessages()) {
       messages = messages.concat(arr);
    }
@@ -183,12 +183,12 @@ exports.testComplexInvalidObject = function() {
 };
 
 exports.testTrim = function() {
-   var obj = {
+   const obj = {
       "foo": "   bar       ",
       "empty": "           "
    };
 
-   var validator = new Validator(obj);
+   const validator = new Validator(obj);
 
    validator.validate("foo").hasLength(13, "error msg");
    assert.isFalse(validator.hasFailures());
@@ -204,7 +204,7 @@ exports.testTrim = function() {
 };
 
 exports.testSanitizers = function() {
-   var obj = {
+   const obj = {
       "date": "Thu Jan 01 1970 00:00:00 GMT-00:00",
       "dateEvil": "asdfsdfasdf",
       "float": "123.456",
@@ -317,13 +317,13 @@ exports.testLengthValidations = function() {
 };
 
 exports.testToValue = function() {
-   var obj = {
+   const obj = {
       "a": 1,
       "b": "foo.bar@baz@boo.com",
       "c": "   12345           "
    };
 
-   var validator = new Validator(obj);
+   const validator = new Validator(obj);
 
    assert.strictEqual(validator.validate("a").toValue(function(val) { return 5 + val; }).getValue(), 6);
    assert.strictEqual(validator.validate("b").toValue(function(val) { return val.replace(/\@/g, ""); }).getValue(), "foo.barbazboo.com");
@@ -335,15 +335,14 @@ exports.testToValue = function() {
 };
 
 exports.testHashIsNotAnObject = function() {
-   var obj = {
+   const obj = {
       "a": 1,
       "b": "foo.bar@baz@boo.com",
       "c": "   12345           "
    };
 
-   var validator = new Validator(obj);
+   const validator = new Validator(obj);
 
-   //assert.strictEqual(validator.validate("hasOwnProperty"));
    validator.validate("hasOwnProperty").toValue(function(val) {
       assert.isFalse(typeof val === "function");
       return val;
@@ -351,12 +350,12 @@ exports.testHashIsNotAnObject = function() {
 };
 
 exports.testOptional = function() {
-   var obj = {
+   const obj = {
       "a": "1",
       "b": "c"
    };
 
-   var validator = new Validator(obj);
+   const validator = new Validator(obj);
 
    validator.validate("a").optional().isInt().toInt();
    assert.isFalse(validator.hasFailures("a"));
@@ -383,7 +382,7 @@ exports.testOptional = function() {
 };
 
 exports.testPlainObjects = function() {
-   var obj = {
+   const obj = {
       "a": 1,
       "b": 2.345678,
       "c": "1",
@@ -394,7 +393,7 @@ exports.testPlainObjects = function() {
       "h": 2.345678
    };
 
-   var validator = new Validator(obj);
+   const validator = new Validator(obj);
 
    validator.validate("a").isInt().toInt();
    assert.isFalse(validator.hasFailures("a"));
