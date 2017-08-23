@@ -369,16 +369,57 @@ exports.testOptional = function() {
    assert.isFalse(validator.hasFailures("d"));
    assert.strictEqual(validator.getValue("d"), undefined);
 
-   validator.validate("e").optional("12345").isInt().toInt();
-   assert.isFalse(validator.hasFailures("e"));
-   assert.strictEqual(validator.getValue("e"), 12345);
-
    validator.validate("e").optional().isInt().toInt();
    assert.isFalse(validator.hasFailures("e"));
+   assert.isUndefined(validator.getValue("e"));
 
-   validator.validate("f").optional("");
+   validator.validate("f").optional();
    assert.isFalse(validator.hasFailures("f"));
-   assert.strictEqual(validator.getValue("f"), "");
+   assert.isFalse(validator.hasFailures());
+   assert.isUndefined(validator.getValue("f"));
+
+   validator.validate("g").isInt().toInt();
+   assert.isTrue(validator.hasFailures());
+   assert.isTrue(validator.hasFailures("g"));
+   assert.isUndefined(validator.getValue("g"));
+
+   validator.validate("h").optional();
+   assert.isFalse(validator.hasFailures("a"));
+   assert.isFalse(validator.hasFailures("b"));
+   assert.isFalse(validator.hasFailures("d"));
+   assert.isFalse(validator.hasFailures("e"));
+   assert.isFalse(validator.hasFailures("f"));
+   assert.isTrue(validator.hasFailures("g"));
+   assert.isFalse(validator.hasFailures("h"));
+   assert.isTrue(validator.hasFailures());
+   assert.isUndefined(validator.getValue("h"));
+};
+
+exports.testOptionalWithDefault = function() {
+   const obj = {
+      "a": "1",
+      "b": 2
+   };
+
+   const validator = new Validator(obj);
+
+   validator.validate("a").optional().isInt().toInt();
+   assert.isFalse(validator.hasFailures("a"));
+   assert.strictEqual(validator.getValue("a"), 1);
+
+   validator.validate("b").optional(3);
+   assert.isFalse(validator.hasFailures("b"));
+   assert.strictEqual(validator.getValue("b"), 2);
+
+   validator.validate("c").optional(4);
+   assert.isFalse(validator.hasFailures("c"));
+   assert.strictEqual(validator.getValue("c"), 4);
+
+   validator.validate("d").optional(4).toValue(function(val) {
+      return -1;
+   });
+   assert.isFalse(validator.hasFailures("d"));
+   assert.strictEqual(validator.getValue("d"), 4);
 };
 
 exports.testPlainObjects = function() {
