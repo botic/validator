@@ -37,4 +37,16 @@ if (validator.hasFailures()) {
 }
 ```
 
+## API Reference
+
+* [Release 2.0.0](https://github.com/botic/validator/wiki/API-Reference-Release-2.0.0)
+
+## Changelog
+
+* **Release 2.0.0**
+  * all validating functions are now prefixed with `is` or `has` e.g. `minLength()` changed to `hasMinLength()` 
+  * Changed the semantics of `.optional()`, which will no longer execute
+    subsequent validation functions or converts.
+  * The default value provided in `.optional()` will be returned by `validator.getValue()`now 
+
 [ ![Codeship Status for botic/validator](https://codeship.com/projects/b77d7cf0-9c82-0131-4c86-5af6bd151f39/status?branch=master)](https://codeship.com/projects/17769)
