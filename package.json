@@ -45,7 +45,7 @@
       }
    ],
    "engines": {
-      "ringojs": ">=1.0"
+      "ringojs": ">=1.0.0"
    },
    "main": "./lib/validator.js"
 }
