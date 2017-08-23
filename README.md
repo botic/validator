@@ -37,6 +37,10 @@ if (validator.hasFailures()) {
 }
 ```
 
+## API Reference
+
+* [Release 2.0.0](https://github.com/botic/validator/wiki/API-Reference-Release-2.0.0)
+
 ## Changelog
 
 * **Release 2.0.0**
