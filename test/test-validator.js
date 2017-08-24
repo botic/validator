@@ -467,6 +467,54 @@ exports.testPlainObjects = function() {
    assert.isTrue(validator.hasFailures("h"));
 };
 
+exports.testStrictOptional = function() {
+   const obj = {
+      "a": "set",
+      "b": "",
+      "c": null,
+      "d": false
+   };
+
+   const validator = new Validator(obj);
+
+   validator.validate("a").optional("do not apply");
+   assert.isFalse(validator.hasFailures("a"));
+   assert.strictEqual(validator.getValue("a"), "set");
+
+   validator.validate("b").optional("apply");
+   assert.isFalse(validator.hasFailures("b"));
+   assert.strictEqual(validator.getValue("b"), "apply");
+
+   validator.validate("c").optional("apply");
+   assert.isFalse(validator.hasFailures("c"));
+   assert.strictEqual(validator.getValue("c"), "apply");
+
+   validator.validate("d").optional("apply");
+   assert.isFalse(validator.hasFailures("d"));
+   assert.strictEqual(validator.getValue("d"), "apply");
+
+   // now the strict case
+   validator.validate("a").optional("do not apply", true);
+   assert.isFalse(validator.hasFailures("a"));
+   assert.strictEqual(validator.getValue("a"), "set");
+
+   validator.validate("b").optional("apply", true);
+   assert.isFalse(validator.hasFailures("b"));
+   assert.strictEqual(validator.getValue("b"), "");
+
+   validator.validate("c").optional("apply", true);
+   assert.isFalse(validator.hasFailures("c"));
+   assert.strictEqual(validator.getValue("c"), null);
+
+   validator.validate("d").optional("apply", true);
+   assert.isFalse(validator.hasFailures("d"));
+   assert.strictEqual(validator.getValue("d"), false);
+
+   validator.validate("e").optional("apply", true);
+   assert.isFalse(validator.hasFailures("e"));
+   assert.strictEqual(validator.getValue("e"), "apply");
+};
+
 // Run the tests
 if (require.main == module.id) {
    system.exit(require('test').run(exports));
