@@ -13,8 +13,8 @@ var validator = new Validator(req.postParams);
 
 validator.validate("username", true) // true --> trim the value
    .isDefined("Username is missing!")
-   .minLength(3, "Username is too short!")
-   .maxLength(255, "Username is too long!");
+   .hasMinLength(3, "Username is too short!")
+   .hasMaxLength(255, "Username is too long!");
 
 validator.validate("email")
    .isDefined("Email address is missing!")
@@ -22,7 +22,7 @@ validator.validate("email")
 
 validator.validate("age")
    .isInt("Invalid age!")
-   .toInt().greaterThan(17, "You need to be 18 years old!");
+   .toInt().isGreaterThan(17, "You need to be 18 years old!");
    
 // Retrieve a single value
 log.debug("Age: " +  validator.getValue("age"));
