@@ -346,6 +346,62 @@ exports.testHashIsNotAnObject = function() {
    });
 };
 
+exports.testHasUncheckedProperties = function() {
+   const obj = {
+      a: 1,
+      b: "string",
+      c: [1,2,3],
+      d: null
+   };
+
+   // everything validated => no unchecked property
+   let validator = new Validator(obj);
+   assert.strictEqual(validator.validate("a").getValue(), 1);
+   assert.strictEqual(validator.validate("b").getValue(), "string");
+   assert.strictEqual(validator.validate("c").toValue(function(val) {
+      return val.reduce(function (acc, cur) {
+         return acc + cur;
+      }, 0);
+   }).getValue(), 6);
+   assert.strictEqual(validator.validate("d").getValue(), null);
+   assert.isFalse(validator.hasFailures("a"));
+   assert.isFalse(validator.hasFailures("b"));
+   assert.isFalse(validator.hasFailures("c"));
+   assert.isFalse(validator.hasFailures("d"));
+   assert.isFalse(validator.hasFailures());
+   assert.isFalse(validator.hasUncheckedProperties());
+
+   // c is not validated => unchecked property
+   validator = new Validator(obj);
+   assert.strictEqual(validator.validate("a").getValue(), 1);
+   assert.strictEqual(validator.validate("b").getValue(), "string");
+   assert.strictEqual(validator.validate("d").getValue(), null);
+   assert.isFalse(validator.hasFailures("a"));
+   assert.isFalse(validator.hasFailures("b"));
+   assert.isTrue(validator.hasFailures("c"));
+   assert.isFalse(validator.hasFailures("d"));
+   assert.isFalse(validator.hasFailures());
+   assert.isTrue(validator.hasUncheckedProperties());
+
+   // empty object provided
+   validator = new Validator({});
+   validator.validate("a").isDefined();
+   assert.isFalse(validator.hasUncheckedProperties());
+   assert.isTrue(validator.hasFailures("a"));
+   assert.isTrue(validator.hasFailures());
+
+   // example from the docs
+   validator = new Validator({
+      "email": "foo.bar@example.com",
+      "additional_key": "value"
+   });
+   validator.validate("email")
+      .isDefined("Email address is missing!")
+      .isEmail("Invalid email address provided");
+   assert.isFalse(validator.hasFailures());
+   assert.isTrue(validator.hasUncheckedProperties());
+};
+
 // Run the tests
 if (require.main == module.id) {
    system.exit(require('test').run(exports));
