@@ -39,10 +39,13 @@ if (validator.hasFailures()) {
 
 ## API Reference
 
+* [Release 2.1.0](https://github.com/botic/validator/wiki/API-Reference-Release-2.1.0)
 * [Release 2.0.0](https://github.com/botic/validator/wiki/API-Reference-Release-2.0.0)
 
 ## Changelog
 
+* **Release 2.1.0**
+  * adds `hasUnvalidatedProperties()` to check if the validated object has no additional properties defined
 * **Release 2.0.0**
   * all validating functions are now prefixed with `is` or `has` e.g. `minLength()` changed to `hasMinLength()` 
   * Changed the semantics of `.optional()`, which will no longer execute
