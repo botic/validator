@@ -538,7 +538,7 @@ exports.testHasUncheckedProperties = function() {
    assert.isFalse(validator.hasFailures("c"));
    assert.isFalse(validator.hasFailures("d"));
    assert.isFalse(validator.hasFailures());
-   assert.isFalse(validator.hasUnvalidatedProperties());
+   assert.isFalse(validator.hasUncheckedProperties());
 
    // c is not validated => unchecked property
    validator = new Validator(obj);
@@ -550,12 +550,12 @@ exports.testHasUncheckedProperties = function() {
    assert.isTrue(validator.hasFailures("c"));
    assert.isFalse(validator.hasFailures("d"));
    assert.isFalse(validator.hasFailures());
-   assert.isTrue(validator.hasUnvalidatedProperties());
+   assert.isTrue(validator.hasUncheckedProperties());
 
    // empty object provided
    validator = new Validator({});
    validator.validate("a").isDefined();
-   assert.isFalse(validator.hasUnvalidatedProperties());
+   assert.isFalse(validator.hasUncheckedProperties());
    assert.isTrue(validator.hasFailures("a"));
    assert.isTrue(validator.hasFailures());
 
@@ -568,7 +568,7 @@ exports.testHasUncheckedProperties = function() {
       .isDefined("Email address is missing!")
       .isEmail("Invalid email address provided");
    assert.isFalse(validator.hasFailures());
-   assert.isTrue(validator.hasUnvalidatedProperties());
+   assert.isTrue(validator.hasUncheckedProperties());
 };
 
 // Run the tests
