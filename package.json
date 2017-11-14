@@ -1,6 +1,6 @@
 {
    "name": "validator",
-   "version": "2.0.0",
+   "version": "2.1.0",
    "description": "Object validation and sanitization. Includes a special validator middleware for ringo/stick.",
    "keywords": [
       "validator", "validation", "validate", "sanitization", "sanitize"
